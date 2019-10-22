@@ -1,0 +1,19 @@
+\chapter*{List of Abbreviations}
+\label{ch:ListOfAbr}
+\addcontentsline{toc}{chapter}{\nameref{ch:ListOfAbr}}
+
+\makeatletter
+\newcommand{\tocfill}{\cleaders\hbox{}\hfill}
+%\newcommand{\tocfill}{\cleaders\hbox{$\m@th \mkern\@dotsep mu . \mkern\@dotsep mu$}\hfill}
+\makeatother
+\newcommand{\abbrlabel}[1]{\makebox[3cm][l]{\textbf{#1}\ \tocfill}}
+\newenvironment{abbreviations}{\begin{list}{}{\renewcommand{\makelabel}{\abbrlabel}
+                                              \setlength{\itemsep}{0pt}}}{\end{list}}
+%\begin{abbreviations}[labelsep=1em,font=\bfseries]
+\begin{abbreviations}
+\item[AGU] 	Adaptive Generalized Unitary transformation
+\item[API] Application Programming Interface
+\item[BSC]	Backscattering Coefficient
+\item[SAR]  Synthetic Aperture Radar  
+\item[CTD]	Coherent Target Decomposition
+\end{abbreviations}

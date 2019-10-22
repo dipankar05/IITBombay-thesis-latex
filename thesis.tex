@@ -1,0 +1,218 @@
+% thesis.tex
+%
+% This file is root file for an example thesis written using the
+% IIT Bombay--CSRE LaTeX Style file.
+% Created by Dipankar Mandal (22 October 2019)
+%
+% It is provided without warranty on an AS IS basis.
+%=====================================================================
+
+
+%=====================================================================
+% DOCUMENT STYLE
+%=====================================================================
+% IITB PhD Thesis format default settings are:
+%   12pt, one-sided printing on a4 size paper
+%\documentclass{iitbthesis}
+%\documentclass[a4paper,plainchapterheads,yschapters,twoside,truedoublelespace]{iitbthesis}
+\documentclass[a4paper,plainchapterheads,yschapters,twoside,truedoublelespace,openright]{iitbthesis}
+% For two-sided printing, with Chapter starting on odd-numbered pages,
+% use the following line instead:  
+%\documentclass[openright,twoside]{iitbthesis}
+%\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}
+%\cleardoublepage}}
+\setcounter{secnumdepth}{3}
+%\setcounter{tocdepth}{3}
+
+%=====================================================================
+% OPTIONAL PACKAGES
+%=====================================================================
+% To include optional packages, use the \usepackage command.
+% For e.g., The package epsfig is used to bring in the Encapsulated
+%    PostScript figures into the document.
+%    The package times is used to change the fonts to Times Roman;
+%=====================================================================
+
+\usepackage{epsfig}
+%\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage{amssymb}
+\usepackage{amsmath,epsfig}
+\usepackage{graphicx,graphics}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[capitalise]{cleveref}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{natbib}
+\usepackage{pdflscape}
+\renewcommand\bibname{References}
+\usepackage{titlesec}
+\usepackage{bm,bbm}
+\usepackage{float,lscape}
+\usepackage{subfig}
+\DeclareMathOperator{\atan}{atan}
+\usepackage{epstopdf}
+\usepackage{tabu}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{lettrine}
+\usepackage{enumitem}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{mathptmx}
+\usepackage{anyfontsize}
+\usepackage{t1enc}
+\usepackage{relsize}
+\usepackage{placeins}
+\usepackage{nomencl}
+\usepackage{rotating}
+\usepackage{glossaries}
+\usepackage{scrlayer}
+\usepackage{enumitem}
+
+%\usepackage{appendix}
+\usepackage[titletoc]{appendix}
+\usepackage[nottoc]{tocbibind}
+%\AtBeginDocument{\setlength\abovedisplayskip{4pt}}
+%\AtBeginDocument{\setlength\belowdisplayskip{4pt}}
+%\usepackage{enumerate}
+%=====================================================================
+%  Single counter for theorems and theorem-like environments:
+%=====================================================================
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{assertion}[theorem]{Assertion}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{figger}[theorem]{Figure}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+%=====================================================================
+% End of Preamble, start of document
+%
+\begin{document}
+
+%=====================================================================
+% Include the prelude for Title page, abstract, table of contents, etc
+% You need to modify it to contain your details
+\abovedisplayskip=8mm
+\abovedisplayshortskip=8mm
+\belowdisplayskip=8mm
+\belowdisplayshortskip=8mm
+
+\include{prelude}
+\include{abbreviations}
+\include{symbols}
+
+
+\setlength{\parskip}{2.5mm}
+\titlespacing{\chapter}{0cm}{55mm}{10mm}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\centering}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+  
+  \titlespacing*{\section}
+  {0pt}{8mm}{8mm}
+  \titlespacing*{\subsection}
+  {0pt}{8mm}{8mm}
+\pagebreak
+%\newpage  
+%\cleardoublepage\pagenumbering{arabic}
+\pagenumbering{arabic}
+
+
+
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+	\hbox{}
+	\vspace*{\fill}
+	\begin{center}
+		This page was intentionally left blank.
+	\end{center}
+	\vspace{\fill}
+	\thispagestyle{empty}
+	\newpage
+	\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+%=====================================================================
+% Include the technical part of the report
+%%\include{chap_intro}             % Chapter 1: Introduction
+
+\newpage
+\pagebreak
+\cleardoublepage
+\include{chap_01_Introduction}
+\include{chap_02_Review_of_literature}
+\include{chap_03_Development_of_Algorithms_and_Methodologies}
+\include{Chap_04_Results_Discussions}
+\include{Chap_05_Summary_and_Conclusions}
+
+
+%=====================================================================
+% APPENDIX
+%  Appendices, if any, must precede the cited literatures.
+%  Appendices shall be numbered in Roman Capitals (e.g. Appendix IV)
+
+
+\begin{appendices}
+	\include{Appendix_I}
+	\include{Appendix_II}
+\end{appendices}
+
+
+ 
+        
+
+%=====================================================================
+% BIBLIOGRAPHY
+\newpage
+\setlength{\parskip}{5mm}
+\titlespacing{\chapter}{0cm}{0mm}{0mm}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+
+\bibliographystyle{References/elsarticle-harv}
+% Add the bib file
+\bibliography{References/mybibfile}
+
+%=====================================================================
+% PUBLICATIONS
+%  publications if any may be listed after the literature cited.
+%\addcontentsline{toc}{chapter}{List of Publications}
+\include{chap_06_List_of_Publications}
+
+%=====================================================================
+% ACKNOWLEDGMENTS
+%   This is the last item in the thesis. It should be signed by
+%   author, with date.
+
+
+\newpage
+\setlength{\parskip}{5mm}
+\titlespacing{\chapter}{0cm}{0mm}{0mm}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries \centering}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+\chapter*{Acknowledgments}
+\label{ch:Acknowledgments}
+\addcontentsline{toc}{chapter}{\nameref{ch:Acknowledgments}}
+\vspace{10mm}
+I wish to record a deep sense of gratitude to \textbf{Prof. ..}, my supervisor for his valuable guidance and constant support at all stages of my Ph.D study and related research. 
+
+
+\end{document}
